@@ -1,0 +1,4 @@
+---
+# defaults file for configure-jenkins-slave-setup
+jenkins_slave_installation_dir: /opt/jenkins/jenkins_slave
+

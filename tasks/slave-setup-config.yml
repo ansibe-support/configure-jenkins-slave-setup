@@ -1,0 +1,20 @@
+---
+- name: create slave installation directory structure
+  file:
+    path: '{{ jenkins_slave_installation_dir }}'
+    owner: '{{ app_user | default("jenkins") }}'
+    group: '{{ app_group | default("jenkins") }}'
+    mode: 0755
+    state: directory
+- name: Create Jenkins Data and Log Directory
+  file:
+    path: '{{ jenkins_slave_installation_dir }}/{{ item }}
+    owner: '{{ app_user | default("jenkins") }}'
+    group: '{{ app_group | default("jenkins") }}'
+    mode: 755
+    state: directory
+  loop:
+    - data
+    - logs
+
+
